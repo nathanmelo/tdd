@@ -1,16 +1,14 @@
 class Stack
 	def initialize
 		@elements = []
-		@last_element_index = -1 
 	end
 
 	def push (element)
 		@elements << element
-		@last_element_index += 1
 	end
 
 	def top
-		@elements[@last_element_index]
+		@elements[-1]
 	end
 end
 
