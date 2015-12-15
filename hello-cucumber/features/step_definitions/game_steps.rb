@@ -20,4 +20,5 @@ class Game
 	def start
 		@output << "Bem-vindo ao jogo da forca!"
 	end
+	
 end
