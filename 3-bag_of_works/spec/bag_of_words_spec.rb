@@ -7,6 +7,7 @@ describe BagOfWords do
 		bag = BagOfWords.new
 		bag.put("hello","world")
 
+                        #expect(bag.words.size).to eq(2)
 		expect(bag).to have(2).words
 	end
 end

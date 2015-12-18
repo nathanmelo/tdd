@@ -1,9 +1,15 @@
 class BagOfWords
+
 	attr_reader :words
+
 	def initialize
-		@words = []
+	             @words = []
 	end
+
 	def put(*words)
-    	#@words += words
-    end
+                          puts "*****************************************"
+                	@words += words
+                          puts @words
+                          puts "*****************************************"
+            end
 end
