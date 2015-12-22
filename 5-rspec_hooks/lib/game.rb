@@ -4,6 +4,10 @@ describe Game, "in the final phase" do
 		it "congratulates the player"
 
 		it "sets the score to 100"
-		
+
 	end
+end
+
+def Game
+
 end
