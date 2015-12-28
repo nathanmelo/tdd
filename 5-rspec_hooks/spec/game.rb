@@ -17,31 +17,37 @@ class Game
 	end
 
 end
+
 describe Game , "in the final phase" do
+	
+	before do
+			@game = Game.new
+			@game.phase = :final
+	end
+
 	context "when the player hits the target" do
 
-		it "congratulates the player" do
-			game = Game.new
-			game.phase = :final
+		before { @game.player_hits_target }
 
-			game.player_hits_target
-			puts "***************************************"
-			puts game.output
-			puts "***************************************"
-			expect(game.output).to eq("Congratulations !")
+		it "congratulates the player" do
+			#substituido pelo before
+			#game = Game.new
+			#game.phase = :final
+
+			#substituido pelo segundo before
+			#@game.player_hits_target
+			
+			expect(@game.output).to eq("Congratulations !")
 		end
 
 		it "sets the score to 100" do
-			game = Game.new
-			game.phase = :final
+			#substituido pelo before
+			#game = Game.new
+			#game.phase = :final
 
-			game.player_hits_target
+			@game.player_hits_target
 
-			puts "***************************************"
-			puts game.score
-			puts "***************************************"
-
-			expect(game.score).to eq(100)
+			expect(@game.score).to eq(100)
 		end
 
 	end
