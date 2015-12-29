@@ -20,10 +20,9 @@ end
 
 describe Game , "in the final phase" do
 	
-	before do
-			@game = Game.new
-			@game.phase = :final
-	end
+	subject (:game) {Game.new(ui)}
+
+	let(:ui) { TwitteUi.new('sandbox_username', 'sandbox_password')}
 
 	context "when the player hits the target" do
 
