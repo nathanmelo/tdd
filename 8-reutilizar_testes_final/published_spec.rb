@@ -1,4 +1,4 @@
-class BlogPost
+module Publishable
 	attr_reader :published_on
 
 	def publish!
@@ -7,16 +7,20 @@ class BlogPost
 	end
 end
 
-describe BlogPost do 
+class PublishableObject
+	include Publishable
+end
+
+describe "A published object" do
+
+	subject { PublishableObject.new}
+
 	describe "#publish!" do
 		it "saves the publication date" do
-			blog_post = BlogPost.new
-
-			blog_post.publish!
+			subject.publish!
 
 			today = Time.now.strftime("%Y-%m-%d")
-			expect(blog_post.published_on).to eq(today)
+			expect(subject.published_on).to eq(today)
 		end
-	end
-	
+	end	
 end
