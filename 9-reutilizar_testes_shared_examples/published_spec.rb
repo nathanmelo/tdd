@@ -19,12 +19,9 @@ class Paper
 	include Publishable
 end
 
-describe "A published object" do
-
-	subject { PublishableObject.new}
-
+shared_examples_for "a publishable object" do
 	describe "#publish!" do
-		it "saves the publication date" do
+		it "saves the date when the object is published" do
 			subject.publish!
 
 			today = Time.now.strftime("%Y-%m-%d")
@@ -32,3 +29,10 @@ describe "A published object" do
 		end
 	end	
 end
+
+describe "a publisehd object" do
+	subject {PublishableObject.new}
+
+	include_examples "a publishable object"
+end
+
