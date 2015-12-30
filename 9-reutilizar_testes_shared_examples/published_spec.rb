@@ -36,3 +36,11 @@ describe "a publisehd object" do
 	include_examples "a publishable object"
 end
 
+describe BlogPost do
+	it_behaves_like "a publishable object"
+end
+
+describe Paper do
+	it_behaves_like "a publishable object"
+end
+
